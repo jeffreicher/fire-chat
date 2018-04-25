@@ -1,4 +1,4 @@
 import { combineReducers } from 'redux';
-import chatReducer from './chat-reducer';
+import chat from './chat-reducer';
 
 export default combineReducers({ chat });
