@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
+import { connect } from 'react-redux';
+import { signUp } from '../actions';
 import Card from './card';
 import RenderInput from './render_input';
 
 class SignUp extends Component {
     handleSignUp(values) {
         console.log('Sign Up Info:', values);
+        this.props.signUp(values);
     }
 
     render() {
@@ -41,4 +44,4 @@ SignUp = reduxForm({
     validate
 })(SignUp);
 
-export default SignUp;
+export default connect(null, { signUp })(SignUp);
